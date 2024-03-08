@@ -5,11 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# UserとBookをそれぞれ10レコードずつ作成
+# UserとBookをそれぞれ5レコードずつ作成
+
+require 'faker'
 
 5.times do |n|
   User.create(
-    name: "testuser#{n+1}",
+    name: Faker::Name.name,
     email: "testuser#{n+1}@test.com",
     password: "123456",
     created_at: Time.current - (n+1).to_i.day
