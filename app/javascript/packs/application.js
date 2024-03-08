@@ -10,8 +10,10 @@ import "channels"
 import jQuery from "jquery"
 import "popper.js"
 import "bootstrap"
+import "chartkick"
+import "chart.js"
 
-import "../stylesheets/application" 
+import "../stylesheets/application"
 
 Rails.start()
 Turbolinks.start()

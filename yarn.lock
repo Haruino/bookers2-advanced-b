@@ -1987,12 +1987,26 @@ chalk@^2.0, chalk@^2.4.1, chalk@^2.4.2:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
-chart.js@^4.4.2:
+chart.js@^4.4.2, chart.js@>=2.8.0, chart.js@4:
   version "4.4.2"
   resolved "https://registry.npmjs.org/chart.js/-/chart.js-4.4.2.tgz"
   integrity sha512-6GD7iKwFpP5kbSD4MeRRRlTnQvxfQREy36uEtm1hzHzcOqwWx0YEHuspuoNlslu+nciLIB7fjjsHkUv/FzFcOg==
   dependencies:
     "@kurkle/color" "^0.3.0"
+
+chartjs-adapter-date-fns@>=3:
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/chartjs-adapter-date-fns/-/chartjs-adapter-date-fns-3.0.0.tgz"
+  integrity sha512-Rs3iEB3Q5pJ973J93OBTpnP7qoGwvq3nUnoMdtxO+9aoJof7UFcRbWcIDteXuYd1fgAvct/32T9qaLyLuZVwCg==
+
+chartkick@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.npmjs.org/chartkick/-/chartkick-5.0.1.tgz"
+  integrity sha512-4F3tWI3eBQgnjCYZIZ+fHOaJuNyxeyhDE2Tm+voOWB19hDjSJceys/spzN52DOn8bWepNESGXvPVTGU1jeFsbA==
+  optionalDependencies:
+    chart.js "4"
+    chartjs-adapter-date-fns ">=3"
+    date-fns ">=2"
 
 chokidar@^2.1.8:
   version "2.1.8"
@@ -2541,6 +2555,11 @@ cyclist@^1.0.1:
   version "1.0.2"
   resolved "https://registry.npmjs.org/cyclist/-/cyclist-1.0.2.tgz"
   integrity sha512-0sVXIohTfLqVIW3kb/0n6IiWF3Ifj5nm2XaSrLq2DI6fKIGa2fYAZdk917rUneaeLVpYfFcyXE2ft0fe3remsA==
+
+date-fns@>=2, date-fns@>=2.0.0:
+  version "3.3.1"
+  resolved "https://registry.npmjs.org/date-fns/-/date-fns-3.3.1.tgz"
+  integrity sha512-y8e109LYGgoQDveiEBD3DYXKba1jWf5BA8YU1FL5Tvm0BTdEfy54WLCwnuYWZNnzzvALy/QQ4Hov+Q9RVRv+Zw==
 
 debug@^2.2.0, debug@^2.3.3, debug@2.6.9:
   version "2.6.9"
