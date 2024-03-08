@@ -11,13 +11,13 @@ class BooksController < ApplicationController
   end
 
   def index
+    @book = Book.new
     to  = Time.current.at_beginning_of_day
     from  = (to - 6.day).at_end_of_day
-    @books = Book.all.sort {|a,b| 
-      b.favorites.where(created_at: from...to).size <=> 
-      a.favorites.where(created_at: from...to).size
-    }
-    @book = Book.new
+    @books = Book.includes(:favorited_users).
+      sort_by {|x|
+        x.favorited_users.includes(:favorites).where(created_at: from...to).size
+      }.reverse
   end
 
   def create
