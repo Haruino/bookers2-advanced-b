@@ -7,22 +7,31 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # UserとBookをそれぞれ10レコードずつ作成
 
-10.times do |n|
+5.times do |n|
   User.create(
     name: "testuser#{n+1}",
     email: "testuser#{n+1}@test.com",
-    password: "testuser#{n+1}",
+    password: "123456",
     created_at: Time.current - (n+1).to_i.day
   )
-  Book.create(
-    title: "testbook#{n+1}",
-    body: "testbook#{n+1}",
-    user_id: n+1,
-    created_at: Time.current - (n+1).to_i.day
-  )
+  # Book.create(
+  #   title: "testbook#{n+1}",
+  #   body: "testbook#{n+1}",
+  #   user_id: n+1,
+  #   created_at: Time.current - (n+1).to_i.day
+  # )
 end
 
-i = User.first.id
+User.all.each do |user|
+  5.times do |n|
+    book = Book.create(
+      title: "本#{n+1}", # 本のタイトルを設定
+      body: "サンプル投稿です#{n+1}", # 本の本文を設定
+      user_id: user.id,  # 本をユーザーに関連付け
+      created_at: Time.current - rand(10).day # 本の作成日時を設定（過去10日間からランダムに選択）
+    )
+  end
+end
 
 # Bookそれぞれに対してUser(1 ~ i)とのFavoriteを作成する。
 # Bookのidが大きくなるほど紐つけられるFavoriteモデルの数が多くなる。
